@@ -75,8 +75,8 @@ public class EntityManaStorm extends Entity {
 
 		ItemStack lens = new ItemStack(ModItems.lens, 1, ItemLens.STORM);
 		burst.setSourceLens(lens);
-
-		Vector3 motion = new Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize().multiply(motionModifier);
+		Random r = new Random();
+		Vector3 motion = new Vector3(r.nextGaussian(), r.nextGaussian(), r.nextGaussian()).normalize().multiply(motionModifier);
 		burst.setMotion(motion.x, motion.y, motion.z);
 		worldObj.spawnEntityInWorld(burst);
 	}
